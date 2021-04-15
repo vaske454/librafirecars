@@ -1,0 +1,6 @@
+name: "Lfc Review"
+description: "This module allows us to write a comment on the purchased product."
+type: module
+core_version_requirement: ^8.8 || ^9
+package: Lfc Review
+version: 1.0
