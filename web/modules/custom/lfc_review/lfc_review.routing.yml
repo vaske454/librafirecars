@@ -1,0 +1,7 @@
+lfc_review.ajaxheroform:
+  path: '/ajax-form'
+  defaults:
+    _form: '\Drupal\lfc_review\Form\AjaxReviewForm'
+    _title: 'Ajax form for review.'
+  requirements:
+    _permission: 'access content'
