@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Implementing our hooks.
+ */
+
+/**
+ * Implements hook_theme()
+ */
+function lfc_review_theme($existing, $type, $theme, $path) {
+  return [
+    'review' => [
+      'variables' => ['items' => [], 'title' => '' ]
+    ]
+  ];
+}
