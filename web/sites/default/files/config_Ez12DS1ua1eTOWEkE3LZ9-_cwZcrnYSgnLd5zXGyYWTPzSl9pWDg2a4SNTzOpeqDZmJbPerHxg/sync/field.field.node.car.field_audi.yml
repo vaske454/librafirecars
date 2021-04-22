@@ -1,0 +1,29 @@
+uuid: b8e2227e-dbe0-4c96-9655-bec7032f4c0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_audi
+    - node.type.car
+    - taxonomy.vocabulary.audi_modeli
+id: node.car.field_audi
+field_name: field_audi
+entity_type: node
+bundle: car
+label: Audi
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      audi_modeli: audi_modeli
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

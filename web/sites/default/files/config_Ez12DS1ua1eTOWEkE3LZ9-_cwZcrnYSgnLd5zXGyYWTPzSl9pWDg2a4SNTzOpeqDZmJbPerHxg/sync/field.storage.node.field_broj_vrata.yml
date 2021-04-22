@@ -1,0 +1,20 @@
+uuid: 180a1c7d-d2f8-4003-b9a5-4f66ce3eb2d9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_broj_vrata
+field_name: field_broj_vrata
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

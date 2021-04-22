@@ -1,0 +1,29 @@
+uuid: 63e4e5a0-2cf7-4445-b226-164fa4c8a1a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_mercedes_benz_referenca
+    - taxonomy.vocabulary.marka
+    - taxonomy.vocabulary.mercedes_benz_modeli
+id: taxonomy_term.marka.field_mercedes_benz_referenca
+field_name: field_mercedes_benz_referenca
+entity_type: taxonomy_term
+bundle: marka
+label: 'Mercedes-Benz referenca'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      mercedes_benz_modeli: mercedes_benz_modeli
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

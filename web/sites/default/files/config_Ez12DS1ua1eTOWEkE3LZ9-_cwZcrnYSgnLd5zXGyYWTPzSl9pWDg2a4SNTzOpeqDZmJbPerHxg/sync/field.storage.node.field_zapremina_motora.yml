@@ -1,0 +1,20 @@
+uuid: 65531621-cb98-476c-b901-b74f37d6f7ea
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_zapremina_motora
+field_name: field_zapremina_motora
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

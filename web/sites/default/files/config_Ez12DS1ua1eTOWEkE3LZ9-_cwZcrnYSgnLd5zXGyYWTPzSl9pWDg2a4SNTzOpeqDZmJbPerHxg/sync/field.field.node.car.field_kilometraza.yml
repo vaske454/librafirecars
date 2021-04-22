@@ -1,0 +1,29 @@
+uuid: c5b588f7-5d81-4437-afe2-45e5cd24cb88
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_kilometraza
+    - node.type.car
+    - taxonomy.vocabulary.kilometraza
+id: node.car.field_kilometraza
+field_name: field_kilometraza
+entity_type: node
+bundle: car
+label: Kilometraza
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      kilometraza: kilometraza
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

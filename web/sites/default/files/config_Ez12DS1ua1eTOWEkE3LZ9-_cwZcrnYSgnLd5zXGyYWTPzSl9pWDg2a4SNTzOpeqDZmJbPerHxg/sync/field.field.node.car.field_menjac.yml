@@ -1,0 +1,29 @@
+uuid: e1d99a3b-83fc-47af-b2a5-d00bf6fe8354
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_menjac
+    - node.type.car
+    - taxonomy.vocabulary.menjac
+id: node.car.field_menjac
+field_name: field_menjac
+entity_type: node
+bundle: car
+label: Menjac
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      menjac: menjac
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

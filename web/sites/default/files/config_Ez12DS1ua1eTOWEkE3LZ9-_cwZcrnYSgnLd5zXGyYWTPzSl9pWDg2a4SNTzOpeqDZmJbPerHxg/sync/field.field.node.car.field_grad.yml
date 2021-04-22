@@ -1,0 +1,29 @@
+uuid: 849c6194-169e-422b-a389-6ff7676f0758
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_grad
+    - node.type.car
+    - taxonomy.vocabulary.grad
+id: node.car.field_grad
+field_name: field_grad
+entity_type: node
+bundle: car
+label: Grad
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      grad: grad
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

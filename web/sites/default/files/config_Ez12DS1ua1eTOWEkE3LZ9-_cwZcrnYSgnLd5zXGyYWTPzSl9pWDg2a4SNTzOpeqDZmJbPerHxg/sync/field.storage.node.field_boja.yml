@@ -1,0 +1,20 @@
+uuid: 5306a605-7361-4cd7-8c6c-d4bfd9841ec2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_boja
+field_name: field_boja
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

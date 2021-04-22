@@ -1,0 +1,8 @@
+uuid: b222ea32-d2e1-4828-80d4-70a355c31866
+langcode: en
+status: true
+dependencies: {  }
+name: Oprema
+vid: oprema
+description: 'This is a taxonomy called equipment.'
+weight: 0

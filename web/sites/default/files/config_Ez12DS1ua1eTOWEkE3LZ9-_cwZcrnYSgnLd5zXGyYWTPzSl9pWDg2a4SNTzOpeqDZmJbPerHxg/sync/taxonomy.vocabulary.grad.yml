@@ -1,0 +1,8 @@
+uuid: 4f9928e8-57ab-4b19-9700-82fb7d2810fa
+langcode: en
+status: true
+dependencies: {  }
+name: Grad
+vid: grad
+description: 'This is a taxonomy city.'
+weight: -2

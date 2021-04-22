@@ -1,0 +1,8 @@
+uuid: f122bef7-3136-40c5-9db6-725f5efd3738
+langcode: en
+status: true
+dependencies: {  }
+name: 'Broj Vrata'
+vid: broj_vrata
+description: 'This is the number of door taxonomies.'
+weight: -1

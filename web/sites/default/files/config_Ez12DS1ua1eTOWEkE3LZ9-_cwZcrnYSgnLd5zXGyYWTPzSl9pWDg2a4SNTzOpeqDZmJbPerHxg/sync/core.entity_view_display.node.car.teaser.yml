@@ -1,0 +1,121 @@
+uuid: 5dc33fac-bd5e-47e7-8b91-fbaebaf283a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.car.field_audi
+    - field.field.node.car.field_boja
+    - field.field.node.car.field_broj_vrata
+    - field.field.node.car.field_cena
+    - field.field.node.car.field_godiste
+    - field.field.node.car.field_gorivo
+    - field.field.node.car.field_grad
+    - field.field.node.car.field_karoserija
+    - field.field.node.car.field_kilometraza
+    - field.field.node.car.field_kw_ks
+    - field.field.node.car.field_marka
+    - field.field.node.car.field_menjac
+    - field.field.node.car.field_mercedes_benz
+    - field.field.node.car.field_oprema
+    - field.field.node.car.field_pogon
+    - field.field.node.car.field_rolls_royce
+    - field.field.node.car.field_slika_automobila
+    - field.field.node.car.field_subaru
+    - field.field.node.car.field_toyota
+    - field.field.node.car.field_zapremina_motora
+    - image.style.car_thumbnail_200x200
+    - node.type.car
+  module:
+    - datetime
+    - image
+    - user
+id: node.car.teaser
+targetEntityType: node
+bundle: car
+mode: teaser
+content:
+  field_cena:
+    type: number_integer
+    weight: 2
+    region: content
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_godiste:
+    type: datetime_default
+    weight: 3
+    region: content
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: html_year
+    third_party_settings: {  }
+  field_grad:
+    type: entity_reference_label
+    weight: 7
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_kilometraza:
+    type: entity_reference_label
+    weight: 6
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_pogon:
+    type: entity_reference_label
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_slika_automobila:
+    type: image
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      image_style: car_thumbnail_200x200
+      image_link: ''
+    third_party_settings: {  }
+  field_zapremina_motora:
+    type: number_integer
+    weight: 5
+    region: content
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  flag_favorites:
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_audi: true
+  field_boja: true
+  field_broj_vrata: true
+  field_gorivo: true
+  field_karoserija: true
+  field_kw_ks: true
+  field_marka: true
+  field_menjac: true
+  field_mercedes_benz: true
+  field_oprema: true
+  field_rolls_royce: true
+  field_subaru: true
+  field_toyota: true

@@ -1,0 +1,20 @@
+uuid: 7711ff94-8e87-4330-a6fc-825b86b45775
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_kw_ks
+field_name: field_kw_ks
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

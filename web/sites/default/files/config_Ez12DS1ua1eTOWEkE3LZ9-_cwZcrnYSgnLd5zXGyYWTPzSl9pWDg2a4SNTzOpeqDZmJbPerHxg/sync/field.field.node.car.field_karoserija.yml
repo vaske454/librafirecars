@@ -1,0 +1,29 @@
+uuid: ab3e71a9-2dc7-47f7-8d9c-3446d14672aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_karoserija
+    - node.type.car
+    - taxonomy.vocabulary.karoserija
+id: node.car.field_karoserija
+field_name: field_karoserija
+entity_type: node
+bundle: car
+label: Karoserija
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      karoserija: karoserija
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

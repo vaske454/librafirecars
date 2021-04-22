@@ -1,0 +1,38 @@
+uuid: f77b8cf1-6b16-46a5-9bc4-c7566fe5cd2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_slika_automobila
+    - node.type.car
+  module:
+    - image
+id: node.car.field_slika_automobila
+field_name: field_slika_automobila
+entity_type: node
+bundle: car
+label: 'Slika automobila'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: '5 MB'
+  max_resolution: 800x600
+  min_resolution: 400x200
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

@@ -1,0 +1,30 @@
+uuid: 5acf4211-844b-413f-8221-3c17484398a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.mercedes_benz_modeli.field_referenca_marke_mercedes
+    - taxonomy.vocabulary.mercedes_benz_modeli
+  module:
+    - text
+id: taxonomy_term.mercedes_benz_modeli.default
+targetEntityType: taxonomy_term
+bundle: mercedes_benz_modeli
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_referenca_marke_mercedes:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }

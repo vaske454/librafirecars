@@ -1,0 +1,16 @@
+uuid: bb169f24-7ef5-45a5-b527-e02f1a1686f3
+langcode: en
+status: true
+dependencies: {  }
+id: bloger
+label: Bloger
+weight: 3
+is_admin: null
+permissions:
+  - 'create blog content'
+  - 'delete blog revisions'
+  - 'delete own blog content'
+  - 'edit own blog content'
+  - 'revert blog revisions'
+  - 'view blog revisions'
+  - 'view own unpublished content'

@@ -1,0 +1,309 @@
+uuid: 36597997-0900-43e0-95ff-1da715a18b8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.car.field_audi
+    - field.field.node.car.field_boja
+    - field.field.node.car.field_broj_vrata
+    - field.field.node.car.field_cena
+    - field.field.node.car.field_godiste
+    - field.field.node.car.field_gorivo
+    - field.field.node.car.field_grad
+    - field.field.node.car.field_karoserija
+    - field.field.node.car.field_kilometraza
+    - field.field.node.car.field_kw_ks
+    - field.field.node.car.field_marka
+    - field.field.node.car.field_menjac
+    - field.field.node.car.field_mercedes_benz
+    - field.field.node.car.field_oprema
+    - field.field.node.car.field_pogon
+    - field.field.node.car.field_rolls_royce
+    - field.field.node.car.field_slika_automobila
+    - field.field.node.car.field_subaru
+    - field.field.node.car.field_toyota
+    - field.field.node.car.field_zapremina_motora
+    - image.style.thumbnail
+    - node.type.car
+  module:
+    - conditional_fields
+    - datetime
+    - image
+    - path
+id: node.car.default
+targetEntityType: node
+bundle: car
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_audi:
+    weight: 18
+    settings: {  }
+    third_party_settings:
+      conditional_fields:
+        5ff69484-7be5-4dfd-8618-d14068c73751:
+          dependee: field_marka
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '16'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: car
+    type: options_select
+    region: content
+  field_boja:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_broj_vrata:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_cena:
+    weight: 28
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_godiste:
+    weight: 31
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_gorivo:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_grad:
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_karoserija:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_kilometraza:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_kw_ks:
+    weight: 29
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_marka:
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_menjac:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_mercedes_benz:
+    weight: 19
+    settings: {  }
+    third_party_settings:
+      conditional_fields:
+        d95c885a-0522-41f2-b807-2e4bdd8b2f94:
+          dependee: field_marka
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '17'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: car
+    type: options_select
+    region: content
+  field_oprema:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_pogon:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_rolls_royce:
+    weight: 20
+    settings: {  }
+    third_party_settings:
+      conditional_fields:
+        8d93993a-7f6f-498a-87e4-4a84668f9218:
+          dependee: field_marka
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '18'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: car
+    type: options_select
+    region: content
+  field_slika_automobila:
+    weight: 26
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_subaru:
+    weight: 21
+    settings: {  }
+    third_party_settings:
+      conditional_fields:
+        3e48f674-8fb0-4aff-b935-5c1105493e04:
+          dependee: field_marka
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '19'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: car
+    type: options_select
+    region: content
+  field_toyota:
+    weight: 22
+    settings: {  }
+    third_party_settings:
+      conditional_fields:
+        f94e4545-d733-4edc-8180-a6f71b2b4bb8:
+          dependee: field_marka
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '20'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: car
+    type: options_select
+    region: content
+  field_zapremina_motora:
+    weight: 27
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  flag:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  path:
+    type: path
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden: {  }

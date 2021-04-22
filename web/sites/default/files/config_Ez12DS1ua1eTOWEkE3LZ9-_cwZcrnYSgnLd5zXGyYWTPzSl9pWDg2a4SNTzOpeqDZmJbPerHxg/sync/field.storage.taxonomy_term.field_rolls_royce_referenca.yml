@@ -1,0 +1,19 @@
+uuid: 6c32813b-83c1-4c46-be84-cfa2fd85c46e
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_rolls_royce_referenca
+field_name: field_rolls_royce_referenca
+entity_type: taxonomy_term
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

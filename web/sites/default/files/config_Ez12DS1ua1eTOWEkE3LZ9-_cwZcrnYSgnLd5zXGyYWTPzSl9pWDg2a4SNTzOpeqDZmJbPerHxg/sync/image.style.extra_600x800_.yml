@@ -1,0 +1,15 @@
+uuid: 0f38258f-d632-410b-b9ae-c70aafccd8e1
+langcode: en
+status: true
+dependencies: {  }
+name: extra_600x800_
+label: 'Extra (600x800)'
+effects:
+  56476640-c543-4d76-a32b-6ef47a496c09:
+    uuid: 56476640-c543-4d76-a32b-6ef47a496c09
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1000
+      height: 500
+      anchor: center-center

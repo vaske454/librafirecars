@@ -1,0 +1,29 @@
+uuid: 55106236-e2bc-437f-a40e-44d5492ebfe0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_referenca_marke_audi
+    - taxonomy.vocabulary.audi_modeli
+    - taxonomy.vocabulary.marka
+id: taxonomy_term.audi_modeli.field_referenca_marke_audi
+field_name: field_referenca_marke_audi
+entity_type: taxonomy_term
+bundle: audi_modeli
+label: 'Referenca marke audi'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      marka: marka
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

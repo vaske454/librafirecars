@@ -1,0 +1,23 @@
+uuid: bb1c2485-b826-412c-a3e3-69ad4012a54b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_kw_ks
+    - node.type.car
+id: node.car.field_kw_ks
+field_name: field_kw_ks
+entity_type: node
+bundle: car
+label: KW/KS
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: KW/KS
+field_type: integer

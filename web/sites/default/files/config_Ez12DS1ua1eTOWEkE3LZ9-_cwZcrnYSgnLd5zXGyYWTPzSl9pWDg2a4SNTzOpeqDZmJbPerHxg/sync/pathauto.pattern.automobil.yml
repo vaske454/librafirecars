@@ -1,0 +1,22 @@
+uuid: 8000f5f1-43d2-42bc-9c64-9c72924327b4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: automobil
+label: Automobil
+type: 'canonical_entities:node'
+pattern: 'automobil/[node:title]'
+selection_criteria:
+  d33fa6ff-4435-4485-9349-d9bca0cfbab3:
+    id: node_type
+    bundles:
+      car: car
+    negate: false
+    context_mapping:
+      node: node
+    uuid: d33fa6ff-4435-4485-9349-d9bca0cfbab3
+selection_logic: and
+weight: -5
+relationships: {  }

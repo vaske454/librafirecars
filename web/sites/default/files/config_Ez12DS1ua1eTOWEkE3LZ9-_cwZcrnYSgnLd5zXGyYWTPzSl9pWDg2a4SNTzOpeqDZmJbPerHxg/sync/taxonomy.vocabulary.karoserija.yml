@@ -1,0 +1,8 @@
+uuid: 48da982e-afaf-4f4d-adc8-db67061415cb
+langcode: en
+status: true
+dependencies: {  }
+name: Karoserija
+vid: karoserija
+description: 'This is car body taxonomy.'
+weight: -5

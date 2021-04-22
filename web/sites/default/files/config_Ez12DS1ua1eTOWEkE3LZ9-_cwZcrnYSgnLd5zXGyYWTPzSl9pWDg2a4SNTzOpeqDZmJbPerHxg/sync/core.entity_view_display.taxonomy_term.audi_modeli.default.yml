@@ -1,0 +1,30 @@
+uuid: 509bbcba-815e-46f4-a98c-8f4559d25963
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.audi_modeli.field_referenca_marke_audi
+    - taxonomy.vocabulary.audi_modeli
+  module:
+    - text
+id: taxonomy_term.audi_modeli.default
+targetEntityType: taxonomy_term
+bundle: audi_modeli
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_referenca_marke_audi:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }

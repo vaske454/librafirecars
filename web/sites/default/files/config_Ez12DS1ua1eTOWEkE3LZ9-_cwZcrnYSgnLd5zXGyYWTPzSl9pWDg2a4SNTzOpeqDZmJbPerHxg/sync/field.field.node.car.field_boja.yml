@@ -1,0 +1,29 @@
+uuid: 2f4409bc-7439-487f-81d1-1c5a6982632d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_boja
+    - node.type.car
+    - taxonomy.vocabulary.boja
+id: node.car.field_boja
+field_name: field_boja
+entity_type: node
+bundle: car
+label: Boja
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      boja: boja
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

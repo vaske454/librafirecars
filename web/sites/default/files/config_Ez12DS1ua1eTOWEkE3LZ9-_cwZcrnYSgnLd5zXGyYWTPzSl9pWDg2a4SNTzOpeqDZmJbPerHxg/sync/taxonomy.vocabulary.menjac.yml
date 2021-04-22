@@ -1,0 +1,8 @@
+uuid: 5dbe5a76-05b9-4c86-936b-653a15ea1f91
+langcode: en
+status: true
+dependencies: {  }
+name: Menjac
+vid: menjac
+description: 'This is a taxonomy called menjac.'
+weight: 1

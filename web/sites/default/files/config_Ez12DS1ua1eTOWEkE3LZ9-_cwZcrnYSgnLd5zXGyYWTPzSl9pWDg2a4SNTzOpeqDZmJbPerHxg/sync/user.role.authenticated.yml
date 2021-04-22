@@ -1,0 +1,46 @@
+uuid: 0073743c-9848-4e94-91e0-c73f74ad4cfe
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access in-place editing'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'access toolbar'
+  - 'access tour'
+  - 'administer shortcuts'
+  - 'cancel account'
+  - 'change own username'
+  - 'create car content'
+  - 'customize shortcut links'
+  - 'delete car revisions'
+  - 'delete own car content'
+  - 'edit own car content'
+  - 'edit own comments'
+  - 'flag favorites'
+  - 'post comments'
+  - 'revert car revisions'
+  - 'select account cancellation method'
+  - 'skip comment approval'
+  - 'switch shortcut sets'
+  - 'unflag favorites'
+  - 'use admin toolbar search'
+  - 'use advanced search'
+  - userprotect.account.edit
+  - userprotect.pass.edit
+  - userprotect.rule_one.bypass
+  - 'view car revisions'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view unpublished paragraphs'

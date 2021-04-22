@@ -1,0 +1,29 @@
+uuid: f1982499-59e7-4e6b-a257-bf21800ac0f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_rolls_royce_referenca
+    - taxonomy.vocabulary.marka
+    - taxonomy.vocabulary.rolls_royce_modeli
+id: taxonomy_term.marka.field_rolls_royce_referenca
+field_name: field_rolls_royce_referenca
+entity_type: taxonomy_term
+bundle: marka
+label: 'Rolls-Royce referenca'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      rolls_royce_modeli: rolls_royce_modeli
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

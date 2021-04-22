@@ -1,0 +1,8 @@
+uuid: 5505399a-b97a-403c-8505-f45102c33014
+langcode: en
+status: true
+dependencies: {  }
+name: 'Rolls-Royce modeli'
+vid: rolls_royce_modeli
+description: 'This is a taxonomy called Rolls-Royce modeli.'
+weight: 4

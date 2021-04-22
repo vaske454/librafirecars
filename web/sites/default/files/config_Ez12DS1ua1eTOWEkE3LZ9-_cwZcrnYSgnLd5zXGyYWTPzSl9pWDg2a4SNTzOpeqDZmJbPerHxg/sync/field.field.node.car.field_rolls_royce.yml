@@ -1,0 +1,29 @@
+uuid: 3cbf5eaf-e31f-4d80-936b-109b2247b694
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rolls_royce
+    - node.type.car
+    - taxonomy.vocabulary.rolls_royce_modeli
+id: node.car.field_rolls_royce
+field_name: field_rolls_royce
+entity_type: node
+bundle: car
+label: Rolls-Royce
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      rolls_royce_modeli: rolls_royce_modeli
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

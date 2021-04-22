@@ -1,0 +1,19 @@
+uuid: accbd89d-7cf2-42fa-8169-5cbaca4099b1
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_subaru_referenca
+field_name: field_subaru_referenca
+entity_type: taxonomy_term
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

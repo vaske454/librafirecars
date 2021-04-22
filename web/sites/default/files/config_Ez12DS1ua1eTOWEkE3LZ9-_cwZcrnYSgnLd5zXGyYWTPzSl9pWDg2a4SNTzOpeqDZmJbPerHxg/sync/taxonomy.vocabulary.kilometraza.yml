@@ -1,0 +1,8 @@
+uuid: d7121dee-e590-4bed-a60a-3eb205935169
+langcode: en
+status: true
+dependencies: {  }
+name: Kilometraza
+vid: kilometraza
+description: 'This is my seccond taxonomy.'
+weight: -9

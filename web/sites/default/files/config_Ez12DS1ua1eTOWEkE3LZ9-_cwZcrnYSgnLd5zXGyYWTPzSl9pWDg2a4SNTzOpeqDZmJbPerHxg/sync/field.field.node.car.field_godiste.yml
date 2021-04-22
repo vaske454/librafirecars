@@ -1,0 +1,21 @@
+uuid: c78d2a5a-5e34-46cd-9a4f-444b2c9b0a22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_godiste
+    - node.type.car
+  module:
+    - datetime
+id: node.car.field_godiste
+field_name: field_godiste
+entity_type: node
+bundle: car
+label: Godiste
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

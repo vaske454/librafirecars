@@ -1,0 +1,20 @@
+uuid: e73a4220-21f0-440a-a7cf-acccbd6a2f0d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_marka
+field_name: field_marka
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

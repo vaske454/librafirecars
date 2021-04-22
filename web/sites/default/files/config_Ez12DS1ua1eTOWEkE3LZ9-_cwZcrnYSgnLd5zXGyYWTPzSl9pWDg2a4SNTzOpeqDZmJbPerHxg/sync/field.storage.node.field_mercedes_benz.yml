@@ -1,0 +1,20 @@
+uuid: 3ca8d3ab-61cc-4527-aaa7-4a9f4ca9616b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_mercedes_benz
+field_name: field_mercedes_benz
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

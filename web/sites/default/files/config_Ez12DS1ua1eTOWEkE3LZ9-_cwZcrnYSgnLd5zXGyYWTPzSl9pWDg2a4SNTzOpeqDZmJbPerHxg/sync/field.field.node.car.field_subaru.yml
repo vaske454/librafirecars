@@ -1,0 +1,29 @@
+uuid: 47bf2a04-7f92-4118-92b8-2a8bd841ee48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subaru
+    - node.type.car
+    - taxonomy.vocabulary.subaru_modeli
+id: node.car.field_subaru
+field_name: field_subaru
+entity_type: node
+bundle: car
+label: Subaru
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      subaru_modeli: subaru_modeli
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

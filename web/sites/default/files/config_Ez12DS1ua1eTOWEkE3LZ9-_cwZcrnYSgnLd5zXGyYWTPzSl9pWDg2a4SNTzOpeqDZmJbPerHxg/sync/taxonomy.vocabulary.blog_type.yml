@@ -1,0 +1,8 @@
+uuid: 091b4bef-4df6-4ea6-b174-f7b7144b6b98
+langcode: en
+status: true
+dependencies: {  }
+name: 'Blog type'
+vid: blog_type
+description: 'This is taxonomy blog type.'
+weight: -10

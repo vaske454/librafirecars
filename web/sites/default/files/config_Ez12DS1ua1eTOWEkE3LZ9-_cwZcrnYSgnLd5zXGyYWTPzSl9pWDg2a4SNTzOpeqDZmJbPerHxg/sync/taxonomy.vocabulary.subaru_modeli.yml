@@ -1,0 +1,8 @@
+uuid: 3efff9e3-171b-46d5-b9c4-9d6418b830c8
+langcode: en
+status: true
+dependencies: {  }
+name: 'Subaru modeli'
+vid: subaru_modeli
+description: 'This is a taxonomy called Subaru modeli.'
+weight: 5

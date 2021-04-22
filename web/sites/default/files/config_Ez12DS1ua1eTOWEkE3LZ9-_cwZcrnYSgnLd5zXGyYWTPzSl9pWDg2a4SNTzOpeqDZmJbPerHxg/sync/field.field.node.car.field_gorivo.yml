@@ -1,0 +1,29 @@
+uuid: 2ef8e13e-4f62-4035-9c38-a0cf50721f6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gorivo
+    - node.type.car
+    - taxonomy.vocabulary.gorivo
+id: node.car.field_gorivo
+field_name: field_gorivo
+entity_type: node
+bundle: car
+label: Gorivo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      gorivo: gorivo
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

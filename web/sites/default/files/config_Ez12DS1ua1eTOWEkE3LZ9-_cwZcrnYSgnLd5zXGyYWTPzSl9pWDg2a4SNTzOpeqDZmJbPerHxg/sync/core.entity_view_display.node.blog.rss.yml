@@ -1,0 +1,45 @@
+uuid: 165697ac-28ae-4341-9a20-121e05dbceb3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.rss
+    - field.field.node.blog.body
+    - field.field.node.blog.field_paragraphs
+    - node.type.blog
+  module:
+    - entity_reference_revisions
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.blog.rss
+targetEntityType: node
+bundle: blog
+mode: rss
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

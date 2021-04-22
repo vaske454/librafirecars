@@ -1,0 +1,29 @@
+uuid: a1a444c6-c918-499f-8099-64ce57c94308
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mercedes_benz
+    - node.type.car
+    - taxonomy.vocabulary.mercedes_benz_modeli
+id: node.car.field_mercedes_benz
+field_name: field_mercedes_benz
+entity_type: node
+bundle: car
+label: Mercedes-Benz
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      mercedes_benz_modeli: mercedes_benz_modeli
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

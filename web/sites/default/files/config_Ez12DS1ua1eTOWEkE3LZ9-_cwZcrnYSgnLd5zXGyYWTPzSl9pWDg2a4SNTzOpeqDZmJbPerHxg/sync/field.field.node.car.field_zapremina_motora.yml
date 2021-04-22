@@ -1,0 +1,23 @@
+uuid: f6613006-d411-456c-a330-bfcb4a94b70d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_zapremina_motora
+    - node.type.car
+id: node.car.field_zapremina_motora
+field_name: field_zapremina_motora
+entity_type: node
+bundle: car
+label: 'Zapremina motora'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: cm3
+field_type: integer

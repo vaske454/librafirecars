@@ -1,0 +1,29 @@
+uuid: 553e4257-8ee3-45f2-978a-dc0e4aa48abe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_subaru_referenca
+    - taxonomy.vocabulary.marka
+    - taxonomy.vocabulary.subaru_modeli
+id: taxonomy_term.marka.field_subaru_referenca
+field_name: field_subaru_referenca
+entity_type: taxonomy_term
+bundle: marka
+label: 'Subaru referenca'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      subaru_modeli: subaru_modeli
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

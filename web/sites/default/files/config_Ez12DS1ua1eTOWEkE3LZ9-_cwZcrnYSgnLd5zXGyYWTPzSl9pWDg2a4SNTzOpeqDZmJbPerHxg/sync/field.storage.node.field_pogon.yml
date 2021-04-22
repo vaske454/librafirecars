@@ -1,0 +1,20 @@
+uuid: 66de1d16-0393-4c32-9481-8c3a199a9745
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_pogon
+field_name: field_pogon
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,29 @@
+uuid: f7490c8a-e0ee-497a-80d3-348467478ab8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_marka
+    - node.type.car
+    - taxonomy.vocabulary.marka
+id: node.car.field_marka
+field_name: field_marka
+entity_type: node
+bundle: car
+label: Marka
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      marka: marka
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

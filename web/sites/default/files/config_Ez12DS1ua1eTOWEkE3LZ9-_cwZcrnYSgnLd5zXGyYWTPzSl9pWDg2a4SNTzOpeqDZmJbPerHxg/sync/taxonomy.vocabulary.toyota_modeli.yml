@@ -1,0 +1,8 @@
+uuid: f90fbf54-ef68-4a11-ae40-cb71af26e30b
+langcode: en
+status: true
+dependencies: {  }
+name: 'Toyota modeli'
+vid: toyota_modeli
+description: 'This is a taxonomy called Toyota modeli.'
+weight: 6

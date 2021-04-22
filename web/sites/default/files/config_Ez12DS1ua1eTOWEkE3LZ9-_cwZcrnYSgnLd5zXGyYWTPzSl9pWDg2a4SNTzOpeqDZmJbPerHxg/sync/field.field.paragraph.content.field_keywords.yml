@@ -1,0 +1,19 @@
+uuid: d66c130d-e037-4c4f-8803-d8644de9a754
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_keywords
+    - paragraphs.paragraphs_type.content
+id: paragraph.content.field_keywords
+field_name: field_keywords
+entity_type: paragraph
+bundle: content
+label: Keywords
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

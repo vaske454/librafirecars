@@ -1,0 +1,29 @@
+uuid: ff985bd4-076c-4d70-97d7-3c3ab2d0508f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_broj_vrata
+    - node.type.car
+    - taxonomy.vocabulary.broj_vrata
+id: node.car.field_broj_vrata
+field_name: field_broj_vrata
+entity_type: node
+bundle: car
+label: 'Broj Vrata'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      broj_vrata: broj_vrata
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

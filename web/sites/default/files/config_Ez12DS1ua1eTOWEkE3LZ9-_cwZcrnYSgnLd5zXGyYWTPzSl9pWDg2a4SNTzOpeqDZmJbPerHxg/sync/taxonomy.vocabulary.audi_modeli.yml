@@ -1,0 +1,8 @@
+uuid: 50178f3a-aea7-4b25-90d8-dccdb558e875
+langcode: en
+status: true
+dependencies: {  }
+name: 'Audi modeli'
+vid: audi_modeli
+description: 'This is a taxonomy called Audi modeli.'
+weight: 2

@@ -1,0 +1,27 @@
+uuid: 537a538f-994a-4c2a-b117-da5290a65d50
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_attached_documents
+    - paragraphs.paragraphs_type.content
+  module:
+    - file
+id: paragraph.content.field_attached_documents
+field_name: field_attached_documents
+entity_type: paragraph
+bundle: content
+label: 'Attached Documents'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: txt
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

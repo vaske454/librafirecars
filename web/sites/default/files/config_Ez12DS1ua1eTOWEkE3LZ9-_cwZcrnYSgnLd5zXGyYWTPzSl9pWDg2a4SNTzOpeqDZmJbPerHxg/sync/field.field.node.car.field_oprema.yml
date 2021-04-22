@@ -1,0 +1,29 @@
+uuid: 5101ad97-0a9f-4dd0-9eb2-2fd2025c5ce6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oprema
+    - node.type.car
+    - taxonomy.vocabulary.oprema
+id: node.car.field_oprema
+field_name: field_oprema
+entity_type: node
+bundle: car
+label: Oprema
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      oprema: oprema
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

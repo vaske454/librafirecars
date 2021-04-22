@@ -1,0 +1,8 @@
+uuid: bb376b4e-87da-402c-9f3d-177b6eafe0a4
+langcode: en
+status: true
+dependencies: {  }
+name: Boja
+vid: boja
+description: 'This is a taxonomy colors.'
+weight: -3

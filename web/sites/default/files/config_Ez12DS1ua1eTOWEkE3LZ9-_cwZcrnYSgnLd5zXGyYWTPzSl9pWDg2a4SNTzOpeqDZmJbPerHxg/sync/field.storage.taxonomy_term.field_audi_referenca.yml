@@ -1,0 +1,19 @@
+uuid: 7e22ec68-d2ac-4995-a8df-887595a50e20
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_audi_referenca
+field_name: field_audi_referenca
+entity_type: taxonomy_term
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,28 @@
+uuid: a13523f1-54fd-4b48-9662-ca531ff0ad8b
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - lfc_review
+  theme:
+    - bartik
+id: reviewblock
+theme: bartik
+region: content
+weight: 0
+provider: null
+plugin: review_block
+settings:
+  id: review_block
+  label: 'Review block'
+  provider: lfc_review
+  label_display: visible
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      car: car
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

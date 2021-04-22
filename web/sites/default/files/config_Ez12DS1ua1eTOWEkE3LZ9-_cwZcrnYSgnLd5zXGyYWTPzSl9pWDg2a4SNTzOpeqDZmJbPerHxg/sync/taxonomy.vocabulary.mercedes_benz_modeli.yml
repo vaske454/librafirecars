@@ -1,0 +1,8 @@
+uuid: 7da92ad7-0b4e-4146-bac4-dd635d34fd27
+langcode: en
+status: true
+dependencies: {  }
+name: 'Mercedes-Benz Modeli'
+vid: mercedes_benz_modeli
+description: 'This is a taxonomy called Mercedes-Benz modeli.'
+weight: 3

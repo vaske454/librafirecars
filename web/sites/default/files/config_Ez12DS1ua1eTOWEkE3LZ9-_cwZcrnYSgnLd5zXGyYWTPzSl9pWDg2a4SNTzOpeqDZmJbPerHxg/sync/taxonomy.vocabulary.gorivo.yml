@@ -1,0 +1,8 @@
+uuid: 48fc787e-c947-49fe-a2c5-a76e1a6f0585
+langcode: en
+status: true
+dependencies: {  }
+name: Gorivo
+vid: gorivo
+description: 'This is my third taxonomy.'
+weight: -8

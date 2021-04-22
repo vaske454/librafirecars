@@ -1,0 +1,15 @@
+uuid: 9e85f073-5d1f-4c5b-81a3-763e1f5401e8
+langcode: en
+status: true
+dependencies: {  }
+name: car_thumbnail_200x200
+label: 'Car Thumbnail 200x200'
+effects:
+  93fa0edd-d6e4-4574-b926-8991087683bb:
+    uuid: 93fa0edd-d6e4-4574-b926-8991087683bb
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 200
+      height: 200
+      anchor: center-center

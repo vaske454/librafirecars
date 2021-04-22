@@ -1,0 +1,23 @@
+uuid: f12cf492-9723-47b7-bbac-c04e7a8a0d66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cena
+    - node.type.car
+id: node.car.field_cena
+field_name: field_cena
+entity_type: node
+bundle: car
+label: Cena
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: $
+field_type: integer

@@ -1,0 +1,55 @@
+uuid: f43e3459-8a04-4ab0-8c27-735b983288a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.content.field_attached_documents
+    - field.field.paragraph.content.field_blog_type
+    - field.field.paragraph.content.field_image
+    - field.field.paragraph.content.field_keywords
+    - paragraphs.paragraphs_type.content
+  module:
+    - file
+    - galleryslider
+id: paragraph.content.default
+targetEntityType: paragraph
+bundle: content
+mode: default
+content:
+  field_attached_documents:
+    weight: 1
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_blog_type:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: galleryslider
+      imgGrid: 'true'
+      menu: grid
+      speed: '300'
+      image_link: ''
+    third_party_settings: {  }
+    type: galleryslider_field_formatter
+    region: content
+  field_keywords:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }
