@@ -7,16 +7,18 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 class AjaxReviewForm extends FormBase {
-  public function getFormId() {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getFormId(): string {
     return 'review_form';
   }
 
-  public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['title'] = array(
-      '#type' => 'textfield',
-      '#title' => t('Enter title:'),
-      '#required' => TRUE,
-    );
+  /**
+   * {@inheritdoc}
+   */
+  public function buildForm(array $form, FormStateInterface $form_state): array {
 
     $form['ocena'] = array(
       '#type' => 'textfield',
@@ -65,17 +67,19 @@ class AjaxReviewForm extends FormBase {
     $form['submit'] = array(
       '#type' => 'submit',
       '#value' => $this->t('Message'),
+      '#submit' => array('submitForm'),
     );
 
-    return $form;
+     return [
+       '#theme' => 'review_form',
+       '#form' => $form
+     ];
   }
 
-  public function submitForm(array &$form, FormStateInterface $form_state): array {
-    Drupal::messenger()->addMessage("Yes it work!");
-    return [
-      '#theme' => 'review',
-      '#items' => $form
-    ];
+  /**
+   * {@inheritdoc}
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state) {
+       Drupal::messenger()->addMessage("Uspelo!!!");
   }
-
 }
