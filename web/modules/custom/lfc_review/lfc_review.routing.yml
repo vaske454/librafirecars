@@ -1,7 +1,14 @@
-lfc_review.ajaxheroform:
-  path: '/ajax-form'
+lfc_review.ajaxreviewform:
+  path: '/admin/manageform'
   defaults:
     _form: '\Drupal\lfc_review\Form\AjaxReviewForm'
     _title: 'Ajax form for review.'
+  requirements:
+    _permission: 'access content'
+lfc_review.manage:
+  path: '/admin/manage'
+  defaults:
+    _title: 'Form'
+    _controller: \Drupal\lfc_review\Controller\LfcReviewController::manageAction
   requirements:
     _permission: 'access content'
