@@ -3,7 +3,9 @@
 namespace Drupal\lfc_review\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Form\FormInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
+use Drupal\Component\Serialization\Json;
 
 /**
  * Provides a 'article' block.
@@ -15,10 +17,21 @@ use Drupal\Core\Form\FormInterface;
  * )
  */
 class ReviewBlock extends BlockBase {
-  public function build() {
-    $form = \Drupal::formBuilder()->getForm('Drupal\lfc_review\Form\AjaxReviewForm');
+  public function build(): array {
+    $form = Url::fromRoute('lfc_review.ajaxreviewform');
+    $form->setOptions([
+      'attributes' => [
+        'class' => ['use-ajax', 'button', 'button--small'],
+        'data-dialog-type' => 'modal',
+        'data-dialog-options' => Json::encode(['width' => 400]),
+      ]
+    ]);
 
-    return $form;
+    return array(
+      '#type' => 'markup',
+      '#markup' => Link::fromTextAndUrl(t('Open modal'), $form)->toString(),
+      '#attached' => ['library' => ['core/drupal.dialog.ajax']]
+    );
   }
 
 }
