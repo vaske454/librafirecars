@@ -10,8 +10,8 @@
  */
 function lfc_review_theme($existing, $type, $theme, $path) {
   return [
-    'review' => [
-      'variables' => ['items' => [], 'title' => '' ]
+    'review_form' => [
+      'variables' => ['form' => [] ],
     ]
   ];
 }
