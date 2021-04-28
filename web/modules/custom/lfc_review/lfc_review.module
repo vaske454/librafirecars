@@ -8,10 +8,10 @@
 /**
  * Implements hook_theme()
  */
-function lfc_review_theme($existing, $type, $theme, $path) {
-  return [
-    'review_form' => [
-      'variables' => ['form' => [] ],
-    ]
-  ];
-}
+//function lfc_review_theme($existing, $type, $theme, $path) {
+//  return [
+//    'review_form' => [
+//      'variables' => ['form' => [] ],
+//    ]
+//  ];
+//}
