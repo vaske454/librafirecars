@@ -1,0 +1,4 @@
+services:
+  lfc_review.title:
+    class: Drupal\lfc_review\ReviewFormService
+    arguments: ['@entity_type.manager', '@form_builder']
