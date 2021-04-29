@@ -2,6 +2,7 @@
 
 namespace Drupal\lfc_review\Plugin\Block;
 
+use Drupal;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
@@ -18,7 +19,10 @@ use Drupal\Component\Serialization\Json;
  */
 class ReviewBlock extends BlockBase {
   public function build(): array {
-    $form = Url::fromRoute('lfc_review.ajaxreviewform');
+    $service = Drupal::service('path.current')->getPath();
+    //TODO Find method to get nodeId directly
+    $nid = explode('/', $service);
+    $form = Url::fromRoute('lfc_review.manage', ['node_id' => $nid[2]]);
     $form->setOptions([
       'attributes' => [
         'class' => ['use-ajax', 'button', 'button--small'],
@@ -26,12 +30,14 @@ class ReviewBlock extends BlockBase {
         'data-dialog-options' => Json::encode(['width' => 400]),
       ]
     ]);
+    $link = Link::fromTextAndUrl(t('Test'), $form)->toString();
 
     return array(
       '#type' => 'markup',
-      '#markup' => Link::fromTextAndUrl(t('Open modal'), $form)->toString(),
-      '#attached' => ['library' => ['core/drupal.dialog.ajax']]
+      '#markup' => $link,
+      '#attached' => ['library' => ['core/drupal.dialog.ajax']],
     );
+
   }
 
 }

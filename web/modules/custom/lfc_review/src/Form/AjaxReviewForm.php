@@ -18,7 +18,15 @@ class AjaxReviewForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state): array {
+  public function buildForm(array $form, FormStateInterface $form_state, $node_id = NULL): array {
+    $node = Drupal::service('lfc_review.title');
+    $title = $node;
+
+    $form['title'] = array(
+      '#type' => 'markup',
+      '#markup' => '<h2>' . $title->getReviewFormService($node_id) . '</h2>',
+    );
+
 
     $form['ocena'] = array(
       '#type' => 'textfield',
@@ -64,22 +72,28 @@ class AjaxReviewForm extends FormBase {
       '#required' => TRUE,
     );
 
+    $form['body'] = array(
+      '#type' => 'text_format',
+      '#title' => 'Body',
+      '#format' => 'restricted_html',
+      '#default_value' => 'Enter some text.',
+      '#required' => TRUE
+    );
+
     $form['submit'] = array(
       '#type' => 'submit',
       '#value' => $this->t('Message'),
-      '#submit' => array('submitForm'),
     );
 
-     return [
-       '#theme' => 'review_form',
-       '#form' => $form
-     ];
+    $form['#attached']['library'][] = 'core/drupal.dialog.ajax';
+
+    return $form;
   }
 
   /**
    * {@inheritdoc}
    */
-  public function submitForm(array &$form, FormStateInterface $form_state) {
-       Drupal::messenger()->addMessage("Uspelo!!!");
+  public function submitForm(array &$form, FormStateInterface $form_state): Drupal\Core\Messenger\MessengerInterface {
+       return Drupal::messenger()->addMessage("Uspelo!!!");
   }
 }
