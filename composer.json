@@ -22,6 +22,7 @@
         "drupal/core-project-message": "^9",
         "drupal/core-recommended": "^9",
         "drupal/devel": "^4.1",
+        "drupal/examples": "^3.0",
         "drupal/flag": "^4.0@beta",
         "drupal/galleryslider": "^3.1",
         "drupal/jsys_content_slider": "^1.0@alpha",
