@@ -1,0 +1,6 @@
+lfc_review.admin_settings:
+  title: 'Lfc review'
+  description: 'Accept or deny impression'
+  route_name: lfc_review.admin_settings
+  parent: system.admin
+  weight: 10
