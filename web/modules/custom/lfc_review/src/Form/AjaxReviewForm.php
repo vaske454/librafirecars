@@ -3,8 +3,12 @@
 namespace Drupal\lfc_review\Form;
 
 use Drupal;
+//use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+
+//use Drupal\Core\Ajax\CloseModalDialogCommand;
 
 class AjaxReviewForm extends FormBase {
 
@@ -93,7 +97,20 @@ class AjaxReviewForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function submitForm(array &$form, FormStateInterface $form_state): Drupal\Core\Messenger\MessengerInterface {
-       return Drupal::messenger()->addMessage("Uspelo!!!");
+  public function submitForm(array &$form, FormStateInterface $form_state) {
+//    $response = new AjaxResponse();
+//    $command = new CloseModalDialogCommand();
+//    $response->addCommand($command);
+//    return Drupal::messenger()->addMessage("Ocena: " . $form_state->getValue('ocena') . " Komunikacija:" . $form_state->getValue('komunikacija') . " Zadovoljstvo:" . $form_state->getValue('zadovoljstvo') . " Korektnost:" .$form_state->getValue('korektnost'));
+    $params['query'] = [
+      'title' => $form_state->getValue('title'),
+      'ocena' => $form_state->getValue('ocena'),
+      'komunikacija' => $form_state->getValue('komunikacija'),
+      'zadovoljstvo' => $form_state->getValue('zadovoljstvo'),
+      'konkretnost' => $form_state->getValue('konkretnost'),
+      'body' => $form_state->getValue('body'),
+    ];
+    $form_state->setRedirectUrl(Url::fromRoute('lfc_review.admin_settings',$params));
+    //$form_state->setRedirectUrl(Url::fromUri('internal:' . 'second_page', $params));
   }
 }
