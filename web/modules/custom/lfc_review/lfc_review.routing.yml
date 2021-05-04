@@ -1,8 +1,24 @@
 lfc_review.ajaxreviewform:
-  path: '/manage-form'
+  path: '/open-popup/{node_id}'
   defaults:
     _form: '\Drupal\lfc_review\Form\AjaxReviewForm'
     _title: 'Ajax form for review.'
+  requirements:
+    _permission: 'access content'
+
+lfc_review.admin_settings:
+  path: '/admin/reviews'
+  defaults:
+    _form: '\Drupal\lfc_review\Form\AjaxAdminReviewForm'
+    _title: 'Accept or Deny'
+  requirements:
+    _permission: 'administer lfc_review'
+
+lfc_reserve.ajaxreserveform:
+  path: '/reserve-form'
+  defaults:
+    _form: '\Drupal\lfc_review\Form\AjaxReserveForm'
+    _title: 'Ajax form for reserve products.'
   requirements:
     _permission: 'access content'
 
