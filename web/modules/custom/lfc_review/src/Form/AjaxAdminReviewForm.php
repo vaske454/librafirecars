@@ -2,11 +2,10 @@
 
 namespace Drupal\lfc_review\Form;
 
-
 use Drupal;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-//use Drupal\Core\Url;
+use Drupal\node\Entity\Node;
 
 class AjaxAdminReviewForm extends FormBase {
 
@@ -21,38 +20,42 @@ class AjaxAdminReviewForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state, $node_id = NULL): array {
+
     $header = [
+      'nid' => t('Nid'),
       'title' => t('Title'),
-      'ocena' => t('Ocena'),
-      'komunikacija' => t('Komunikacija'),
-      'zadovoljstvo' => t('Zadovoljstvo'),
-      'korektnost' => t('Korektnost'),
+      'rating' => t('Rating'),
+      'communication' => t('Communication'),
+      'satisfaction' => t('Satisfaction'),
+      'correctness' => t('Correctness'),
       'body' => t('Body'),
     ];
 
-    $title = Drupal::request()->query->get('title');
-    $ocena = Drupal::request()->query->get('ocena');
-    $komunikacija = Drupal::request()->query->get('komunikacija');
-    $zadovoljstvo = Drupal::request()->query->get('zadovoljstvo');
-    $korektnost = Drupal::request()->query->get('korektnost');
-    $body = Drupal::request()->query->get('body');
 
-    $option = array(
-      'title' => $title,
-      'ocena' => $ocena,
-      'komunikacija' => $komunikacija,
-      'zadovoljstvo' => $zadovoljstvo,
-      'korektnost' => $korektnost,
-      'body' => $body
-    );
+    $query = Drupal::entityQuery('node')
+      ->condition('type', 'message')
+      ->condition('status', 1)
+      ->execute();
+    $results = Node::loadMultiple($query);
 
-
+    $data = [];
+    foreach($results as $node) {
+      $data[] = [
+        'nid' => $node->get('nid')->value,
+        'title' => $node->get('title')->value,
+        'rating' => $node->get('field_rating')->value,
+        'communication' => $node->get('field_communication')->value,
+        'satisfaction' => $node->get('field_satisfaction')->value,
+        'correctness' => $node->get('field_correctness')->value,
+        'body' => $node->get('body')->value,
+      ];
+    }
 
     $form['table'] = [
       '#type' => 'table',
       '#header' => $header,
-      '#options' => $option,
-      '#empty' => $this->t("Don't exist!")
+      '#rows' => $data,
+      '#empty' => $this->t("Don't exist!"),
     ];
 
     return $form;
@@ -62,10 +65,6 @@ class AjaxAdminReviewForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-//    $params['query'] = [
-//      'candidate_name' => $form_state->getValue('candidate_name'),
-//    ];
-//
-//    $form_state->setRedirectUrl(Url::fromUri('internal:' . 'second_page', $params));
+    //TODO get form submit
   }
 }

@@ -15,3 +15,19 @@
 //    ]
 //  ];
 //}
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter() for node_form.
+ *
+ * Completely hide the Meta vertical tab (field group) from people without permission.
+ *
+ */
+function lfc_review_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // If the current user has the permission, do not hide the Meta vertical tab.
+  if (\Drupal::currentUser()->hasPermission('access meta tab')) {
+    return;
+  }
+  // Code to hide the meta tab goes here, and is only reached if the user lacks the permission.
+  // ...
+}

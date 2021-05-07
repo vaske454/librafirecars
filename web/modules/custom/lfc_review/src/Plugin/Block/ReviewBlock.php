@@ -18,6 +18,10 @@ use Drupal\Component\Serialization\Json;
  * )
  */
 class ReviewBlock extends BlockBase {
+
+  /**
+   * {@inheritdoc}
+   */
   public function build(): array {
     $service = Drupal::service('path.current')->getPath();
     //TODO Find method to get nodeId directly

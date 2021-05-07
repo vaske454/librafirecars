@@ -3,12 +3,10 @@
 namespace Drupal\lfc_review\Form;
 
 use Drupal;
-//use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
-
-//use Drupal\Core\Ajax\CloseModalDialogCommand;
+use Drupal\node\Entity\Node;
 
 class AjaxReviewForm extends FormBase {
 
@@ -27,52 +25,54 @@ class AjaxReviewForm extends FormBase {
     $title = $node;
 
     $form['title'] = array(
-      '#type' => 'markup',
-      '#markup' => '<h2>' . $title->getReviewFormService($node_id) . '</h2>',
+      '#type' => 'textfield',
+      '#attributes' => array(
+        ' disabled' => 'disabled',
+      ),
+      '#value' =>$title->getReviewFormService($node_id),
     );
 
-
-    $form['ocena'] = array(
+    $form['rating'] = array(
       '#type' => 'textfield',
       '#attributes' => array(
         ' type' => 'number',
         ' min' => 1,
         ' max' => 5
       ),
-      '#title' => t('Unesi ocenu:'),
+      '#title' => t('Enter rating:'),
       '#required' => TRUE,
     );
 
-    $form['komunikacija'] = array(
+    $form['communication'] = array(
       '#type' => 'textfield',
       '#attributes' => array(
         ' type' => 'number',
         ' min' => 1,
         ' max' => 5
       ),
-      '#title' => t('Oceni komunikaciju sa prodavcem:'),
+      '#title' => t('Rate communication with seller:'),
       '#required' => TRUE,
     );
 
-    $form['zadovoljstvo'] = array(
+    $form['satisfaction'] = array(
       '#type' => 'textfield',
       '#attributes' => array(
         ' type' => 'number',
         ' min' => 1,
         ' max' => 5
       ),
-      '#title' => t('Zadovoljstvo sa kupljenim autom:'),
+      '#title' => t('Satisfaction with the purchased car:'),
       '#required' => TRUE,
     );
 
-    $form['korektnost'] = array(
+    $form['correctness'] = array(
       '#type' => 'textfield',
       '#attributes' => array(
         ' type' => 'number',
         ' min' => 1,
         ' max' => 5
       ),
-      '#title' => t('Korektnost oglasa:'),
+      '#title' => t('The correctness of the ad:'),
       '#required' => TRUE,
     );
 
@@ -87,6 +87,14 @@ class AjaxReviewForm extends FormBase {
     $form['submit'] = array(
       '#type' => 'submit',
       '#value' => $this->t('Message'),
+      '#attributes' => [
+        'onclick' => 'return true;'
+      ],
+      '#attached' => array(
+        'library' => array(
+          'lfc_review/lfc_review.style',
+        ),
+      ),
     );
 
     $form['#attached']['library'][] = 'core/drupal.dialog.ajax';
@@ -98,19 +106,31 @@ class AjaxReviewForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-//    $response = new AjaxResponse();
-//    $command = new CloseModalDialogCommand();
-//    $response->addCommand($command);
-//    return Drupal::messenger()->addMessage("Ocena: " . $form_state->getValue('ocena') . " Komunikacija:" . $form_state->getValue('komunikacija') . " Zadovoljstvo:" . $form_state->getValue('zadovoljstvo') . " Korektnost:" .$form_state->getValue('korektnost'));
+    Drupal::messenger()->addMessage("Uspeo si");
     $params['query'] = [
       'title' => $form_state->getValue('title'),
-      'ocena' => $form_state->getValue('ocena'),
-      'komunikacija' => $form_state->getValue('komunikacija'),
-      'zadovoljstvo' => $form_state->getValue('zadovoljstvo'),
-      'konkretnost' => $form_state->getValue('konkretnost'),
+      'rating' => $form_state->getValue('rating'),
+      'communication' => $form_state->getValue('communication'),
+      'satisfaction' => $form_state->getValue('satisfaction'),
+      'correctness' => $form_state->getValue('correctness'),
       'body' => $form_state->getValue('body'),
     ];
+
+    $node = Node::create(array(
+      'type' => 'message',
+      'title' => $params['query']['title'],
+      'langcode' => 'en',
+      'uid' => '1',
+      'status' => 1,
+      'body' => $params['query']['body'],
+      'field_rating' => $params['query']['rating'],
+      'field_communication' => $params['query']['communication'],
+      'field_satisfaction' => $params['query']['satisfaction'],
+      'field_correctness' => $params['query']['correctness'],
+    ));
+
+    $node->save();
+
     $form_state->setRedirectUrl(Url::fromRoute('lfc_review.admin_settings',$params));
-    //$form_state->setRedirectUrl(Url::fromUri('internal:' . 'second_page', $params));
   }
 }
