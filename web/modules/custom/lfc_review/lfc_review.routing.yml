@@ -6,6 +6,14 @@ lfc_review.ajaxreviewform:
   requirements:
     _permission: 'view lfc_review'
 
+lfc_review.denyform:
+  path: '/deny'
+  defaults:
+    _form: '\Drupal\lfc_review\Form\DenyForm'
+    _title: 'Deny form'
+  requirements:
+    _permission: 'access content'
+
 lfc_review.admin_settings:
   path: '/admin/reviews'
   defaults:
