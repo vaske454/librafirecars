@@ -27,7 +27,7 @@ class ReserveBlock extends BlockBase{
 //
 //    $form = Url::fromRoute('lfc_reserve.ajaxreserveform');
 //
-//    $link = Link::fromTextAndUrl(t('Test'), $form)->toString();
+//    $link = Link::fromTextAndUrl(t('Popup'), $form)->toString();
 //
 //    return array(
 //      '#type' => 'markup',
