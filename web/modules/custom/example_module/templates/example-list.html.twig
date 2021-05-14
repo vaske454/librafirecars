@@ -1,0 +1,9 @@
+<h4>{{ title }}</h4>
+<ul>
+  {% for item in items %}
+    <li>{{ item.title }}</li>
+    <li> {{ item.0.one }} </li>
+    <li>{{ item.description }}</li>
+    <li>{{ item.rating }}</li>
+  {% endfor %}
+</ul>

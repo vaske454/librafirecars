@@ -1,0 +1,7 @@
+example_module.display:
+  path: '/example-one'
+  defaults:
+    _title: 'My Example Module'
+    _controller: '\Drupal\example_module\Controller\ControllerExample::display'
+  requirements:
+    _permission: 'access content'
