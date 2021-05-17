@@ -3,6 +3,8 @@
 namespace Drupal\lfc_review\Form;
 
 use Drupal;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\OpenModalDialogCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
@@ -136,10 +138,23 @@ class AjaxAdminReviewForm extends FormBase {
       $form['contacts'][$nid]['deny'] = [
         '#type' => 'submit',
         '#value' => 'Deny',
+        '#submit' => array('openPopup')
       ];
     }
 
     return $form;
+  }
+
+  public function openPopup($node_id): AjaxResponse {
+    $options = [
+      'dialogClass' => 'popup-dialog-class',
+      'width' => '50%',
+    ];
+    $response = new AjaxResponse();
+    $service = Drupal::service('lfc_review.denyform');
+    $modal_form = $service;
+    $response->addCommand(new OpenModalDialogCommand(t('Modal title'), $modal_form->getFormBuilder($node_id), $options));
+    return $response;
   }
 
   /**

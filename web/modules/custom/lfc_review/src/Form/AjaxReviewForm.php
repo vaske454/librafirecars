@@ -21,6 +21,28 @@ class AjaxReviewForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state, $node_id = NULL): array {
+
+    $query = Drupal::entityQuery('node')
+      ->condition('type', 'car')
+      ->condition('status', 1)
+      ->execute();
+    $results = Node::loadMultiple($query);
+
+    $data = [];
+    foreach($results as $node) {
+      $data = [
+        'nid' => $node->get('nid')->value
+      ];
+    }
+
+    $form['nid'] = array(
+      '#type' => 'textfield',
+      '#attributes' => array(
+        ' disabled' => 'disabled',
+      ),
+      '#value' =>$data,
+    );
+
     $node = Drupal::service('lfc_review.title');
     $title = $node;
 
@@ -109,18 +131,7 @@ class AjaxReviewForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     Drupal::messenger()->addMessage("Uspeo si");
 
-    $query = Drupal::entityQuery('node')
-      ->condition('type', 'car')
-      ->condition('status', 1)
-      ->execute();
-    $results = Node::loadMultiple($query);
 
-    $data = [];
-    foreach($results as $node) {
-      $data = [
-        'nid' => $node->get('nid')->value
-      ];
-    }
 
     $params['query'] = [
       'title' => $form_state->getValue('title'),
@@ -129,7 +140,7 @@ class AjaxReviewForm extends FormBase {
       'satisfaction' => $form_state->getValue('satisfaction'),
       'correctness' => $form_state->getValue('correctness'),
       'body' => $form_state->getValue('body'),
-      'origin' => $data['nid']
+      'origin' => $form_state->getValue('nid'),
     ];
 
     $node = Node::create(array(
